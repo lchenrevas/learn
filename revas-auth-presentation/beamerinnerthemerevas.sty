@@ -1,0 +1,33 @@
+\mode<presentation>
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+  \fill[color=revassecondary] (0,2) rectangle (\the\paperwidth,\the\paperheight);
+  \fill[color=revasprimary] (0,2) rectangle(\the\paperwidth, 0.2);
+  \fill[color=white] (0,0) rectangle(\the\paperwidth,1.9);
+  \ifnum\thepage>1\relax%
+   \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+   \fi
+  \end{tikzpicture}
+}
+
+% Title page
+\defbeamertemplate*{title page}{texsx}[1][]
+{ 
+   \vskip6.2cm%
+    \begin{beamercolorbox}[wd=16cm,leftskip=0.5cm,sep=10pt,#1]{title page header}
+      \usebeamerfont{title}\inserttitle\par%
+    \end{beamercolorbox}%
+    \vskip0.5cm%
+    \begin{beamercolorbox}[wd=12cm,leftskip=1cm,#1]{author}
+      \usebeamerfont{author}\insertauthor%
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[wd=12cm,leftskip=1.1cm,#1]{date}
+      \usebeamerfont{author}\insertdate%
+    \end{beamercolorbox}
+  \vfill
+}
+
+\mode
+<all>
